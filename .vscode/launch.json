@@ -9,7 +9,7 @@
             "request": "launch",
             "name": "Launch Script in ExtendScript Engine",
             "script" : "${workspaceRoot}/index.js",
-            "hostAppSpecifier": "photoshop-170.064",
+            "hostAppSpecifier": "photoshop-180.064",
         }
     ]
 }
