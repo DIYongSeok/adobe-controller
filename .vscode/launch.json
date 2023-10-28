@@ -7,9 +7,16 @@
         {
             "type": "extendscript-debug",
             "request": "launch",
-            "name": "Launch Script in ExtendScript Engine",
-            "script" : "${workspaceRoot}/index.js",
-            "hostAppSpecifier": "photoshop-180.064",
-        }
+            "name": "Attach to ExtendScript Engine",
+            "script" : "${workspaceRoot}/after-effects/index.js",
+            "hostAppSpecifier": "aftereffects-24.0",
+        },
+        // {
+        //     "type": "extendscript-debug",
+        //     "request": "launch",
+        //     "name": "Launch Script in ExtendScript Engine",
+        //     "script" : "${workspaceRoot}/photoshop/index.js",
+        //     "hostAppSpecifier": "photoshop-180.064",
+        // }
     ]
 }
