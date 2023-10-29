@@ -2,10 +2,10 @@
     regards Kristian Andersen krilleandersen@gmail.com
 */
 
-let modify = {
-   name: "박인권,엄석진,배종훈,이수영".split(','),
-   job: "서울대학교 교수,서울대학교 교수,서울대학교 교수,서울대학교 교수".split(','),
-   title: "의사결정 구조,행정업무 및 권한체계,행정조직 개선 방향,직원인사제도 개선 및 역량 강화".split(',')
+const modify = {
+   name: "정길수/김월회/김정하/임호준/고태우/박수철/노경덕/장진성/강성훈/도승연/윤비/안재원".split('/'),
+   job: "국문과/중문과/영문과/서문과/국사/동양사/서양사/미술사/철학과/광운대 인제니움학부/성대 정치학과/인문학연구원".split('/'),
+   title: `자유롭지 못한 존재의 욕망\r-운영, 춘향, 초옥의 사랑/호귀(狐鬼)의 욕망:\r<요재지이>속 여우와 귀신의 욕망/불가능한 기원:\r입양 서사와 친족의 욕망들/루이스 부뉴엘 영화의 욕망의 궤적 :\r<안달루시아의 개>에서 <욕망의 모호한 대상>까지/마이카로 향하는 여정\r20세기 후반 자동차 소유 욕망의 전개와 한계/16세기 일본 武士의 욕망과 古名/스탈린 시대 소련 공산당원의\r도덕률과 욕망 문제/삼세기영지가(三世耆英之家)의 영예 :\r강세황(姜世晃,1713-1791)의 명예욕/플라톤과 욕망의 다면성/푸코의 자기배려의 윤리/더러운 욕망 :\r서구 정치사상사에서 욕망을 바라보는 시각들/아풀레이우스의 "퓌시케와 쿠피도의 사랑이야기" :\r쾌락의 탄생`.split('/')
 };
 
  function ArtboardGenerator(layerName = "PIP", modifyList = ["name", "job"]) {
@@ -134,5 +134,5 @@ let modify = {
     }
  }
 //  ArtboardGenerator("간지", ["name", "job", "title"])
-// ArtboardGenerator("NAMETAG", ["name", "job"]) 
+ArtboardGenerator("NAMETAG", ["name", "job"]) 
 ArtboardGenerator("PIP", ["name", "job", "title"])  

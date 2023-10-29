@@ -34,7 +34,7 @@
             var removedCompLayer = findCompInItems(newIntroComp.layers, modifyCompName);
             insertedCompLayer.moveAfter(removedCompLayer);
             insertedCompLayer.startTime = removedCompLayer.startTime;
-            insertedCompLayer.opacity.setValuesAtTimes([5.9, 6.27], [0, 100]);
+            //  insertedCompLayer.opacity.setValuesAtTimes([5.9,6.27],[0,100])
             removedCompLayer.remove();
         }
         catch (err) {
