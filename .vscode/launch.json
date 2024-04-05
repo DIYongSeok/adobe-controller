@@ -8,7 +8,7 @@
         //     "type": "extendscript-debug",
         //     "request": "launch",
         //     "name": "Attach to ExtendScript Engine",
-        //     "script" : "${workspaceRoot}/after-effects/index.js",
+        //     "script" : "${workspaceRoot}/after-effects/Duplicater.js",
         //     "hostAppSpecifier": "aftereffects-24.0",
         // },
         {
