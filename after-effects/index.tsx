@@ -1,29 +1,17 @@
- /* Got questions improvements? please do ask or share 
-    regards Kristian Andersen krilleandersen@gmail.com
+ /* 
+ duplcate the final composition changing a composition in it 
 */
- /*
-  1. 강사소개 composition duplicate
-  2. 안에 text replace
-  3. 인트로 composition duplicate
-  4. 강사소개 composition replace 또는 삽입
- */
-/*
-import { findCompInItems, searchAndReplaceTextInComp } from "./Duplicater";
-
-
-
-
 
  (function main() {
 
-   const introCompName: string = "Intro_인터뷰"
-   const modifyCompName: string = "강사소개"
-   const modifyList = ["name", "job", "title"];
+   const introCompName: string = ""
+   const modifyCompName: string = ""
    const modify = {
-      name: "김재원/백수빈/이재연/전재우".split('/'),
-      job: "이화여대 사회학과/경찰대학 치안대학원/연세대 사회학과/서울대 행정대학원".split('/'),
-      title: `윤리적 소비에 관한 의향 및 실천 연구/잠재계층분석을 활용한 데이트폭력 가해자 유형화 연구/남성과 돌봄: 배우자의 돌봄 시간이\r남성과 여성의 고용 유지에 미치는 성별화된 효과/정부-국민 소통에 대한 인식이 정부신뢰에 미치는 영향\r: 정치성향 및 정치효능감의 조절효과를 중심으로`.split('/')
-   };
+       name: "".split('/'),
+       job: "".split('/'),
+       title: "".split('/'),
+   }; //write the name of items that you want to duplicate in the composition
+   const modifyList: (keyof typeof modify)[] = ["name", "job", "title"];
 
     for (let modifiedIndex = 0; modifiedIndex < modify.name.length; modifiedIndex++) {
        try {
@@ -38,16 +26,41 @@ import { findCompInItems, searchAndReplaceTextInComp } from "./Duplicater";
           }
 
           let newIntroComp = (findCompInItems(app.project.items, introCompName) as CompItem).duplicate();
-
+          newIntroComp.name = `${introCompName}_${modifiedIndex+1}`
           const insertedCompLayer = newIntroComp.layers.add(modifiedComp)
+         
           const removedCompLayer = findCompInItems(newIntroComp.layers, modifyCompName) as Layer
           insertedCompLayer.moveAfter(removedCompLayer)
           insertedCompLayer.startTime = removedCompLayer.startTime
-         //  insertedCompLayer.opacity.setValuesAtTimes([5.9,6.27],[0,100])
+          //  insertedCompLayer.name = `${modifyCompName}_${modifiedIndex+1}`
+          //  insertedCompLayer.opacity.setValuesAtTimes([5.9,6.27],[0,100])
           removedCompLayer.remove();
        } catch (err) {
           alert(err)
        }
     }
  })()
- */
+
+
+ function findCompInItems < T extends LayerCollection | ItemCollection > (items: T, itemName: string): T[number] | undefined {
+   for (let i = 1; i <= items.length; i++) {
+      if (items[i].name == itemName) {
+         return items[i];
+      }
+   }
+}
+
+// This funciton changes the text content inside a composition if it finds a matching layer name
+function searchAndReplaceTextInComp(myComp: CompItem, replaceTextLayerName: string, newText: string) {
+   // This goes through all of the layers in a composition
+   for (var i = 1; i <= myComp.numLayers; i++) {
+      var curLayer = myComp.layer(i);
+      // if the current layer name is equal to replaceTextLayerName, change the text content
+      if (curLayer.name == replaceTextLayerName && curLayer instanceof TextLayer) {
+        curLayer.sourceText.setValue(newText as any);
+         return;
+      }
+
+   }
+
+}

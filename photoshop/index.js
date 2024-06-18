@@ -3,13 +3,15 @@
    regards Kristian Andersen krilleandersen@gmail.com
 */
 var modify = {
-    name: "설동훈/김경학/김종호/최아영".split('/'),
-    job: "전북대학교 사회학과/전남대학교 문화인류고고학과/서강대학교 동아연구소/서울대학교 아시아연구소".split('/'),
-    title: "[동북아시아 네트워크]\r국제인구이동과 사회경제적 연결 구조:\r한국과 일본의 이민자 수용 사례분석/[남아시아와 서아시아 네트워크]\r국제이주노동으로 본 남아시아와\r서아시아 네트워크/[동남아시아의 네트워크]\r남중국해 화인 네트워크 속 사람, 자본, 물자 그리고 문화의 이동:\r근대 화교 송금 네트워크 형성과 이동의 구조/[중앙아시아의 네트워크]\r중앙아시아 부하라 유대인의 초국가적 공동체:\r네트워크, 미디어, 정체성".split('/'),
+    name: "김용석/홍길동".split('/'),
+    job: "서울대/연세대".split('/'),
+    title: "발표1/발표2".split('/'),
 };
-function ArtboardGenerator(layerName, modifyList) {
-    if (layerName === void 0) { layerName = "PIP"; }
-    if (modifyList === void 0) { modifyList = ["name", "job"]; }
+var modifyList = ["name", "job", "title"];
+var artboardName = ["PIP", "NAMETAG"];
+for (var i = 0; i < artboardName.length; i++)
+    ArtboardGenerator(artboardName[i]);
+function ArtboardGenerator(artboardName) {
     try {
         // move artboard to last order
         // =======================================================
@@ -18,7 +20,7 @@ function ArtboardGenerator(layerName, modifyList) {
         var idnull = app.charIDToTypeID("null");
         var ref61 = new ActionReference();
         var idLyr = app.charIDToTypeID("Lyr ");
-        ref61.putName(idLyr, layerName);
+        ref61.putName(idLyr, artboardName);
         desc1265.putReference(idnull, ref61);
         var idMkVs = app.charIDToTypeID("MkVs");
         desc1265.putBoolean(idMkVs, false);
@@ -50,22 +52,25 @@ function ArtboardGenerator(layerName, modifyList) {
     catch (err) { }
     for (var i = 0; i < modify[modifyList[0]].length; i++) {
         for (var j = 0; j < modifyList.length; j++) {
-            var key = modifyList[j];
-            var idslct = app.charIDToTypeID("slct");
-            var desc1265 = new ActionDescriptor();
-            var idnull = app.charIDToTypeID("null");
-            var ref61 = new ActionReference();
-            var idLyr = app.charIDToTypeID("Lyr ");
-            ref61.putName(idLyr, key);
-            desc1265.putReference(idnull, ref61);
-            var idMkVs = app.charIDToTypeID("MkVs");
-            desc1265.putBoolean(idMkVs, false);
-            var idLyrI = app.charIDToTypeID("LyrI");
-            var list61 = new ActionList();
-            list61.putInteger(360);
-            desc1265.putList(idLyrI, list61);
-            app.executeAction(idslct, desc1265, DialogModes.NO);
-            app.activeDocument.activeLayer.textItem.contents = modify[key][i];
+            try {
+                var key = modifyList[j];
+                var idslct = app.charIDToTypeID("slct");
+                var desc1265 = new ActionDescriptor();
+                var idnull = app.charIDToTypeID("null");
+                var ref61 = new ActionReference();
+                var idLyr = app.charIDToTypeID("Lyr ");
+                ref61.putName(idLyr, key);
+                desc1265.putReference(idnull, ref61);
+                var idMkVs = app.charIDToTypeID("MkVs");
+                desc1265.putBoolean(idMkVs, false);
+                var idLyrI = app.charIDToTypeID("LyrI");
+                var list61 = new ActionList();
+                list61.putInteger(360);
+                desc1265.putList(idLyrI, list61);
+                app.executeAction(idslct, desc1265, DialogModes.NO);
+                app.activeDocument.activeLayer.textItem.contents = modify[key][i];
+            }
+            catch (err) { }
         }
         // =======================================================
         var idslct = app.charIDToTypeID("slct");
@@ -73,7 +78,7 @@ function ArtboardGenerator(layerName, modifyList) {
         var idnull = app.charIDToTypeID("null");
         var ref61 = new ActionReference();
         var idLyr = app.charIDToTypeID("Lyr ");
-        ref61.putName(idLyr, layerName);
+        ref61.putName(idLyr, artboardName);
         desc1265.putReference(idnull, ref61);
         var idMkVs = app.charIDToTypeID("MkVs");
         desc1265.putBoolean(idMkVs, false);
@@ -93,7 +98,7 @@ function ArtboardGenerator(layerName, modifyList) {
         ref1.putEnumerated(idLyr, idOrdn, idTrgt);
         desc232.putReference(idnull, ref1);
         var idNm = app.charIDToTypeID("Nm  ");
-        desc232.putString(idNm, "".concat(i + 1, "_").concat(layerName));
+        desc232.putString(idNm, "".concat(i + 1, "_").concat(artboardName));
         var idVrsn = app.charIDToTypeID("Vrsn");
         desc232.putInteger(idVrsn, 5);
         var idIdnt = app.charIDToTypeID("Idnt");
@@ -106,7 +111,7 @@ function ArtboardGenerator(layerName, modifyList) {
         var idnull = app.charIDToTypeID("null");
         var ref61 = new ActionReference();
         var idLyr = app.charIDToTypeID("Lyr ");
-        ref61.putName(idLyr, "".concat(i + 1, "_").concat(layerName));
+        ref61.putName(idLyr, "".concat(i + 1, "_").concat(artboardName));
         desc1265.putReference(idnull, ref61);
         var idMkVs = app.charIDToTypeID("MkVs");
         desc1265.putBoolean(idMkVs, false);
@@ -138,6 +143,3 @@ function ArtboardGenerator(layerName, modifyList) {
         app.executeAction(idmove, desc1109, DialogModes.NO);
     }
 }
-// ArtboardGenerator("NAMETAG", ["name", "job"]) 
-ArtboardGenerator("PIP", ["name", "job", "title"]);
-// ArtboardGenerator("간지", ["name", "job", "title"])    
