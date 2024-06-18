@@ -1,7 +1,7 @@
 ## Introduction
 this project is built to duplicate a composition or an artboard in adobe programs(after effects, photoshop)
 
-![adobe-controller](https://github.com/DIYongSeok/adobe-controller/assets/146920174/a9dde2e4-5391-4415-a2bd-4016dd189926)
+![adobe-controller](https://github.com/DIYongSeok/adobe-controller/assets/146920174/0e313fce-e580-4ae0-bf26-8fa0156d9806)
 
 ## To start
 ```
