@@ -1,5 +1,5 @@
 ## Introduction
-this project is built to duplicate a composition or an artboard in adobe programs(after effects, photoshop)
+This project involves duplicating compositions or artboards in Adobe programs (After Effects, Photoshop) while modifying their contents.
 
 ![adobe-controller](https://github.com/DIYongSeok/adobe-controller/assets/146920174/0e313fce-e580-4ae0-bf26-8fa0156d9806)
 
