@@ -16,3 +16,7 @@ npx tsc
 ```
 - After converting the files into index.js or duplicater.js, load the files in adobe software (File > Scripts > Browse)
 - or you can launch it pressing F5 through downloading the plugin(ExtendScript Debugger)
+
+## Reference
+- [Adobe Scripting Tutorial](https://www.youtube.com/playlist?list=PL0qACgPuF8dWHJNHPTDDpoT_kTuihIv8S)
+- [Photoshop Script Listener](https://www.youtube.com/watch?v=x_rMhCz-MdQ)
