@@ -97,7 +97,7 @@ catch(err){}
       ref1.putEnumerated(idLyr, idOrdn, idTrgt);
       desc232.putReference(idnull, ref1);
       var idNm = app.charIDToTypeID("Nm  ");
-      desc232.putString(idNm, `${i+1}_${artboardName}`);
+      desc232.putString(idNm, `${artboardName}_${i+1}`);
       var idVrsn = app.charIDToTypeID("Vrsn");
       desc232.putInteger(idVrsn, 5);
       var idIdnt = app.charIDToTypeID("Idnt");

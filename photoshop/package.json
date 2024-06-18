@@ -6,9 +6,12 @@
   "scripts": {
     "start": "tsc && node index.js"
   },
-  "dependencies": {
+  "devDependencies": {
     "types-for-adobe": "^7.0.12"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.4.5"
+  }
 }

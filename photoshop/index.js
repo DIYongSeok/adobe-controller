@@ -1,20 +1,20 @@
 "use strict";
-/* Got questions improvements? please do ask or share
-   regards Kristian Andersen krilleandersen@gmail.com
+/*
+  duplicate an artboard changing a content of the items.
 */
 var modify = {
-    name: "김용석/홍길동".split('/'),
-    job: "서울대/연세대".split('/'),
-    title: "발표1/발표2".split('/'),
+    name: "".split('/'),
+    job: "".split('/'),
+    title: "".split('/'),
 };
 var modifyList = ["name", "job", "title"];
-var artboardName = ["PIP", "NAMETAG"];
+var artboardName = [];
 for (var i = 0; i < artboardName.length; i++)
     ArtboardGenerator(artboardName[i]);
 function ArtboardGenerator(artboardName) {
     try {
         // move artboard to last order
-        // =======================================================
+        // ======================================================= 
         var idslct = app.charIDToTypeID("slct");
         var desc1265 = new ActionDescriptor();
         var idnull = app.charIDToTypeID("null");
@@ -98,7 +98,7 @@ function ArtboardGenerator(artboardName) {
         ref1.putEnumerated(idLyr, idOrdn, idTrgt);
         desc232.putReference(idnull, ref1);
         var idNm = app.charIDToTypeID("Nm  ");
-        desc232.putString(idNm, "".concat(i + 1, "_").concat(artboardName));
+        desc232.putString(idNm, "".concat(artboardName, "_").concat(i + 1));
         var idVrsn = app.charIDToTypeID("Vrsn");
         desc232.putInteger(idVrsn, 5);
         var idIdnt = app.charIDToTypeID("Idnt");
@@ -111,7 +111,7 @@ function ArtboardGenerator(artboardName) {
         var idnull = app.charIDToTypeID("null");
         var ref61 = new ActionReference();
         var idLyr = app.charIDToTypeID("Lyr ");
-        ref61.putName(idLyr, "".concat(i + 1, "_").concat(artboardName));
+        ref61.putName(idLyr, "".concat(artboardName, "_").concat(i + 1));
         desc1265.putReference(idnull, ref61);
         var idMkVs = app.charIDToTypeID("MkVs");
         desc1265.putBoolean(idMkVs, false);

@@ -8,7 +8,10 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "types-for-adobe": "^7.0.12"
+  },
+  "dependencies": {
+    "typescript": "^5.4.5"
   }
 }
