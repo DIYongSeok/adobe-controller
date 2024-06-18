@@ -1,7 +1,7 @@
 ## Introduction
 this project is built to duplicate a composition or an artboard in adobe programs(after effects, photoshop)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/MFJIOqxK6k8" frameborder="0" allowfullscreen></iframe>
+![adobe-controller](https://github.com/DIYongSeok/adobe-controller/assets/146920174/a9dde2e4-5391-4415-a2bd-4016dd189926)
 
 ## To start
 ```
